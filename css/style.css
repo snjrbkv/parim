@@ -1,0 +1,803 @@
+@font-face {
+  font-family: Merriweather-Regular;
+  font-style: normal;
+  src: url(../fonts/Merriweather-Regular.ttf);
+}
+
+@font-face {
+  font-family: Merriweather-Italic;
+  font-style: italic;
+  src: url(../fonts/Merriweather-Italic.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: Merriweather-Regular;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3%;
+}
+
+button {
+  display: none;
+}
+
+header {
+  position: relative;
+  height: 800px;
+  overflow: hidden;
+}
+
+.header-bg {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  background-image: url("../image/photo/a572cbfb2e516252abe5e86e1d6e39d0f47d636e_1_690x436.png");
+  background-repeat: no-repeat;
+  z-index: -1;
+  transform: translateX(-150px) translateY(-200px) rotate(180deg);
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  background-image: url("../image/photo/a572cbfb2e516252abe5e86e1d6e39d0f47d636e_2_690x436.png");
+  background-repeat: no-repeat;
+  transform: translateX(200px) translateY(-100px);
+  z-index: -1;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  background-image: url("../image/photo/a572cbfb2e516252abe5e86e1d6e39d0f47d636e_3_690x436.png");
+  background-repeat: no-repeat;
+  transform: translateX(-50px) translateY(100px) rotate(180deg);
+  z-index: -1;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  background-image: url("../image/photo/a572cbfb2e516252abe5e86e1d6e39d0f47d636e_4_690x436.png");
+  background-repeat: no-repeat;
+  z-index: -1;
+  transform: translateX(50px) translateY(120px);
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -6;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.header-top {
+  width: 100%;
+  height: 30px;
+  background-color: #385043;
+}
+
+.header-in {
+  padding: 2% 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  width: 85%;
+}
+
+.site-logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.nav-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list--link {
+  color: #fff;
+  font-size: clamp(10px, 1.5vw, 16px);
+}
+
+.nav-list--btn {
+  padding: 10px 30px;
+  border: 2px solid #fff;
+}
+.hero {
+  padding: 5%;
+  background-image: url("../image/bg-vidio/close-up-white-marble-textured-wall.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-in {
+  position: relative;
+}
+.hero--arrow {
+  width: 200px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  position: absolute;
+  top: -8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  color: #385043;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.header-main {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.header-main .header--info-title,
+.header-main .header--title {
+  color: #fff;
+  font-weight: 400;
+}
+
+.header--title {
+  font-size: 40px;
+}
+
+.header--info-title {
+  margin-top: 3%;
+  font-family: Merriweather-Italic;
+  font-style: italic;
+}
+.hero__card--title {
+  margin: 5% 2%;
+  font-size: 30px;
+  color: #385043;
+  text-align: center;
+}
+
+.burger {
+  width: 25px;
+  height: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  display: none;
+}
+
+.burger span {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+
+.hero--info {
+  margin: 20px 0;
+  font-size: 15px;
+  color: #385043;
+}
+
+.hero__cards {
+  margin: 7% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cards--card {
+  padding: 0 1%;
+  margin: 2px;
+  width: 260px;
+  height: 450px;
+  border: 5px dashed #385043;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card--title {
+  margin: 15px 0;
+}
+.galary {
+  width: 100%;
+  height: 800px;
+  background-image: url("../image/bg-vidio/shutterstock_2175943243.jpg");
+  background-size: cover;
+}
+.galary--parent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.galary--photo {
+  width: 400px;
+  height: 400px;
+  width: 50%;
+  padding: 5% 5%;
+  background-color: black;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+  color: #fff;
+  background-color: rgba(56, 80, 67, 0.7); /* Прозрачный цвет #385043 */
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  cursor: pointer;
+}
+.galary--photo:nth-child(1) {
+  background-image: url("../image/photo/IMG_20231024_071801.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.galary--photo:nth-child(2) {
+  background-image: url("../image/photo/image-07-12-23-05-48-5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.galary--photo:nth-child(3) {
+  margin: 0 auto;
+  background-image: url("../image/photo/IMG_9689-LR.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.galary--photo:hover {
+  transform: scale(1.1);
+}
+.galary--photo__min-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  background-color: #38504394; /* Прозрачный цвет #385043 */
+  filter: blur(1px);
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+.galary--title {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 300;
+}
+.galary--info {
+  margin: 5% 0;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.slider-section {
+  padding: 5% 0;
+}
+.slider--paginetion {
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.paginetion--btn {
+  padding: 15px 40px;
+  text-transform: uppercase;
+  border: 3px dashed #385043;
+  cursor: pointer;
+  color: #385043;
+  font-weight: 500;
+}
+.paginetion--btn:nth-child(1) {
+  background-color: #385043;
+  color: #fff;
+}
+.swiper--card-in {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2% 3%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #e1e1e1;
+  border-radius: 30px;
+}
+.slider--section--title {
+  margin: 4% 0;
+  font-size: 30px;
+  color: #385043;
+  font-weight: 400;
+}
+.swiper-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card--text-box {
+  width: 600px;
+}
+.card--sub-title {
+  font-size: 16px;
+  color: #385043;
+}
+.swiper-card {
+  margin: 5% 0;
+}
+.swiper-card--info {
+  color: #385043;
+  width: 80%;
+  text-align: left;
+}
+.swiper-card--category {
+  width: 100%;
+  margin: 8% 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.card--category--box {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.category-box--info {
+  margin-left: 5%;
+  color: #385043;
+}
+.cost--title {
+  font-size: 20px;
+  color: #385043;
+  font-weight: normal;
+  margin: 3% 0;
+}
+.swiper-card__cost {
+  margin: 3% 0;
+  width: 100%;
+}
+.cost--list {
+  display: flex;
+  flex-direction: column;
+}
+.cost--item {
+  margin: 1% 0;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cost--item--info {
+  color: #385043;
+}
+.cost--item--info span {
+  font-size: 12px;
+}
+.card--img-box {
+  width: 600px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card--img-box img {
+  height: 528px;
+  width: 528px;
+  display: block;
+  border-radius: 30px;
+}
+.last-section {
+  position: relative;
+  background-image: url("../image/bg-vidio/rounded-olivine-diabase.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  z-index: -3;
+}
+.last--title {
+  width: 100%;
+  text-align: right;
+}
+.last--img-box {
+  padding: 5% 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.img--box--left-side {
+  width: 50%;
+}
+.left-side--item {
+  padding: 2% 10%;
+  position: relative;
+  margin-bottom: 3%;
+  color: #fff;
+  font-size: 20px;
+}
+.left-side--item img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.img--box--right-side {
+  padding: 3% 2%;
+  width: 50%;
+  height: 300px;
+  border-radius: 30px;
+  background-image: url("../image/photo/massazhnyj-stol-oformlenie-foto.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.text--title {
+  font-size: 20px;
+
+  color: #fff;
+}
+.text--sub-info {
+  margin: 3% 0;
+  color: #fff;
+  font-weight: 200;
+}
+.text--link {
+  color: #fff;
+  font-weight: 300;
+}
+.last--cost-info {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-family: Merriweather-Italic;
+}
+footer {
+  position: relative;
+  overflow: hidden;
+}
+.footer-container {
+  position: relative;
+}
+/* .footer--blur-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+} */
+#footer--bg-el {
+  z-index: 2;
+  top: 10px;
+}
+#footer--bg-el:nth-child(1) {
+  top: 40px;
+}
+.footer-bottom-box {
+  width: 100%;
+  height: 100px;
+  background-color: #385043;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  position: relative;
+}
+.footer-bottom-box img {
+  width: 500px;
+  transform: translateY(210px);
+}
+.footer-map {
+  margin-top: 5%;
+  width: 100%;
+  height: 520px;
+}
+.bottom-box--link {
+  text-decoration: underline;
+  color: #fff;
+  font-weight: 300;
+}
+.bottom-box--info {
+  color: #fff;
+  font-weight: 300;
+}
+.footer-info-box {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 100px;
+  right: 150px;
+  padding: 5% 0;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  color: #000;
+  text-align: center;
+  box-shadow: 0 0 0 12000px #00000062;
+
+  backdrop-filter: blur(
+    10px
+  ); /* Значение blur задает степень размытия, укажите желаемое значение */
+  background-color: #385043a2; /* Добавим небольшой фон с прозрачностью для улучшения видимости */
+}
+
+.footer-info-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../image/photo/fit_960_530_false_crop_986_554_0_46_q90_1366751_38862645d264e892985420b47.png");
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 120px 12000px #38504381;
+  filter: blur(
+    1.5px
+  ); /* Значение blur задает степень размытия, укажите желаемое значение */
+  z-index: 1;
+}
+\ .footer--title,
+.footer--link,
+.footer--location,
+.footer--info {
+  position: relative;
+  z-index: 1; /* Устанавливаем z-index, чтобы текст оставался над размытым фоном */
+}
+.footer-info-box p,
+a,
+h2 {
+  margin-bottom: 3%;
+  color: #fff;
+}
+.footer-info-box p {
+  margin-bottom: 5%;
+}
+@media only screen and (max-width: 900px) {
+  .header-main {
+    margin-top: 7%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .header--title {
+    font-size: 28px;
+  }
+
+  .header--info-title {
+    font-size: 16px;
+  }
+  .hero-in {
+    padding: 5% 0;
+  }
+  .hero--arrow {
+    top: 0%;
+    width: 120px;
+    font-size: 50px;
+    height: auto;
+    transform: translate(-50%, -100%);
+  }
+  .hero__card--title {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    height: 400px;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .header--title {
+    font-size: 25px;
+  }
+
+  .header--info-title {
+    font-size: 15px;
+  }
+
+  .hero__cards {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-bg {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+  }
+  .hero--arrow {
+    width: 90px;
+    font-size: 40px;
+  }
+  .cards--card {
+    margin: 10px 0;
+  }
+  .hero__card--title {
+    font-size: 20px;
+  }
+
+  .galary--photo:hover {
+    transform: scale(1.03);
+  }
+  .galary--info,
+  .galary--title {
+    font-weight: 200;
+  }
+  .card--img-box {
+    display: none;
+    position: absolute;
+    z-index: -1;
+  }
+  .card--img-box img {
+    display: none;
+  }
+
+  .slider--paginetion {
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .paginetion--btn {
+    margin: 0 1%;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    border: 2px dashed #385043;
+    cursor: pointer;
+    color: #385043;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .last--title {
+    text-align: center;
+  }
+  .img--box--left-side {
+    width: 100%;
+    margin: 0;
+  }
+  .left-side--item {
+    width: 100%;
+    margin-bottom: 2%;
+    color: #fff;
+    font-size: 15px;
+  }
+  .left-side--item img {
+    width: 100%;
+    display: block;
+  }
+  .last-section {
+    position: relative;
+    background-image: none;
+  }
+  .img--box--right-side {
+    padding: 5% 3%;
+    width: 100%;
+    height: 300px;
+    border-radius: 30px;
+    background-image: url("../image/photo/massazhnyj-stol-oformlenie-foto.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+  }
+  .text--title {
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .footer-bottom-box {
+    padding: 0 3%;
+  }
+  .footer-bottom-box img {
+    width: 200px;
+    transform: translateY(90px);
+  }
+  .bottom-box--info,
+  .bottom-box--link {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header--title {
+    font-size: 18px;
+  }
+
+  .header--info-title {
+    font-size: 12px;
+  }
+
+  .hero-in {
+    padding: 6% 0;
+  }
+
+  .hero-in--box {
+    padding: 0 10%;
+    width: 100%;
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+  }
+
+  .hero--title {
+    font-size: 35px;
+    color: #242424;
+  }
+
+  .hero--info-box {
+    margin-top: 2%;
+    position: relative;
+  }
+
+  .hero--info {
+    margin: 20px 0;
+    font-size: 15px;
+    color: #385043;
+  }
+  .hero--arrow {
+    width: 60px;
+    font-size: 30px;
+  }
+
+  .galary {
+    height: auto;
+  }
+  .galary--photo {
+    margin: 10px 0;
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+  }
+}
